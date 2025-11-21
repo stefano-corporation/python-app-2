@@ -1,0 +1,20 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: github-runner
+  namespace: actions-runner-system
+spec:
+  replicas: 1
+  template:
+    spec:
+      repository: stefano-corporation/python-app-1  # Update this to your repo
+      labels:
+        - self-hosted
+      # Optionally, you can specify resource limits
+      # resources:
+      #   limits:
+      #     cpu: "1"
+      #     memory: "2Gi"
+      #   requests:
+      #     cpu: "500m"
+      #     memory: "1Gi"ß
